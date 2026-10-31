@@ -13,7 +13,7 @@ class SaveTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
-        self.root = Path(self.temp.name)
+        self.root = Path(self.temp.name).resolve()
         self.source = self.root / 'saves'
         self.source.mkdir()
         self.storage = self.root / 'backups'
